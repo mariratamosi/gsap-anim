@@ -5721,7 +5721,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
     defaults: {
       duration: 1
     }
-  });
+  }); //ekta shesh hoile arekta hobe, so aage vaage korte chaile add "-=2.2"
+
 
   t1.from(".anim1", {
     y: -50,
@@ -5732,7 +5733,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
     cssRule: {
       scaleY: 0
     }
-  }, "-=2.2").from("aside", {
+  }, "-=2.2" //early
+  ).from("aside", {
     opacity: 0,
     backgroundPosition: "200px 0px"
   }, "-=1.5").from("img", {
@@ -5740,6 +5742,16 @@ window.addEventListener("DOMContentLoaded", function (event) {
     //go up
     opacity: 0
   }, "-=.5");
+  document.getElementById("cta").addEventListener("click", function () {
+    if (t1.reversed()) {
+      t1.play();
+    } else {
+      t1.reverse();
+      setTimeout(function () {
+        t1.play();
+      }, 2000);
+    }
+  });
 });
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

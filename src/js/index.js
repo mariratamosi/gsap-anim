@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     },
   });
 
+  //ekta shesh hoile arekta hobe, so aage vaage korte chaile add "-=2.2"
   t1.from(".anim1", {
     y: -50,
     stagger: 0.6,
@@ -50,7 +51,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           scaleY: 0,
         },
       },
-      "-=2.2"
+      "-=2.2" //early
     )
     .from(
       "aside",
@@ -68,4 +69,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
       },
       "-=.5"
     );
+
+  document.getElementById("cta").addEventListener("click", () => {
+    if (t1.reversed()) {
+      t1.play();
+    } else {
+      t1.reverse();
+      setTimeout(() => {
+        t1.play();
+      }, 2000);
+    }
+  });
 });
