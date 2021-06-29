@@ -5687,48 +5687,59 @@ var _gsap = _interopRequireDefault(require("gsap"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//text reveal anim
-//After elem p
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
 
   _gsap.default.registerPlugin(CSSRulePlugin); //gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
+  //   gsap.from(".anim1", {
+  //     opacity: 0,
+  //     duration: 1,
+  //     y: -50, //go down
+  //     ease: "Power2.easeInOut",
+  //     stagger: 0.6,
+  //   });
+  //   gsap.from("img", {
+  //     duration: 1,
+  //     y: 30, //go up
+  //     opacity: 0,
+  //     delay: 1.4,
+  //   });
+  //   gsap.from("aside", {
+  //     duration: 1,
+  //     opacity: 0,
+  //     backgroundPosition: "200px 0px",
+  //     delay: 1.1,
+  //   });
+  //   let rule = CSSRulePlugin.getRule("span:after");
+  //   gsap.to(rule, { duration: 5, cssRule: { scaleY: 0 } });
+  //pseudo element is going from down to up, and eventually to scale 0
 
-
-  _gsap.default.from(".anim1", {
-    opacity: 0,
-    duration: 1,
-    y: -50,
-    //go down
-    ease: "Power2.easeInOut",
-    stagger: 0.6
-  });
-
-  _gsap.default.from("img", {
-    duration: 1,
-    y: 30,
-    //go up
-    opacity: 0,
-    delay: 1.4
-  });
-
-  _gsap.default.from("aside", {
-    duration: 1,
-    opacity: 0,
-    backgroundPosition: "200px 0px",
-    delay: 1.1
-  });
 
   var rule = CSSRulePlugin.getRule("span:after");
-  console.log(rule);
 
-  _gsap.default.to(rule, {
-    duration: 5,
+  var t1 = _gsap.default.timeline({
+    defaults: {
+      duration: 1
+    }
+  });
+
+  t1.from(".anim1", {
+    y: -50,
+    stagger: 0.6,
+    opacity: 0
+  }).to(rule, {
+    duration: 1.8,
     cssRule: {
       scaleY: 0
     }
-  }); //pseudo element is going from down to up, and eventually to scale 0
-
+  }, "-=2.2").from("aside", {
+    opacity: 0,
+    backgroundPosition: "200px 0px"
+  }, "-=1.5").from("img", {
+    y: 30,
+    //go up
+    opacity: 0
+  }, "-=.5");
 });
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
