@@ -5693,7 +5693,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
   _gsap.default.from(".content", {
     opacity: 0,
     duration: 1,
-    y: -50
+    y: -50,
+    ease: "Power2.easeInOut"
   });
 });
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
