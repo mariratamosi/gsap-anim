@@ -1,7 +1,11 @@
 import gsap from "gsap";
 
+//text reveal anim
+//After elem p
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
+  gsap.registerPlugin(CSSRulePlugin);
+  //gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
   gsap.from(".anim1", {
     opacity: 0,
     duration: 1,
@@ -23,4 +27,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     backgroundPosition: "200px 0px",
     delay: 1.1,
   });
+
+  let rule = CSSRulePlugin.getRule("span:after");
+  console.log(rule);
+  gsap.to(rule, { duration: 5, cssRule: { scaleY: 0 } });
+  //pseudo element is going from down to up, and eventually to scale 0
 });

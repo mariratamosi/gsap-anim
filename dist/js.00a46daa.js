@@ -5687,8 +5687,13 @@ var _gsap = _interopRequireDefault(require("gsap"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//text reveal anim
+//After elem p
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
+
+  _gsap.default.registerPlugin(CSSRulePlugin); //gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
+
 
   _gsap.default.from(".anim1", {
     opacity: 0,
@@ -5713,6 +5718,17 @@ window.addEventListener("DOMContentLoaded", function (event) {
     backgroundPosition: "200px 0px",
     delay: 1.1
   });
+
+  var rule = CSSRulePlugin.getRule("span:after");
+  console.log(rule);
+
+  _gsap.default.to(rule, {
+    duration: 5,
+    cssRule: {
+      scaleY: 0
+    }
+  }); //pseudo element is going from down to up, and eventually to scale 0
+
 });
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
