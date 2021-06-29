@@ -30,7 +30,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //   gsap.to(rule, { duration: 5, cssRule: { scaleY: 0 } });
   //pseudo element is going from down to up, and eventually to scale 0
 
+  let t1 = createTimeline();
+
+  document.getElementById("cta").addEventListener("click", () => {
+    if (t1.reversed()) {
+      t1.play();
+    } else {
+      t1.reverse();
+      setTimeout(() => {
+        t1.play();
+      }, 2000);
+    }
+  });
+});
+
+const createTimeline = function () {
   let rule = CSSRulePlugin.getRule("span:after");
+
   let t1 = gsap.timeline({
     defaults: {
       duration: 1,
@@ -70,14 +86,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
       "-=.5"
     );
 
-  document.getElementById("cta").addEventListener("click", () => {
-    if (t1.reversed()) {
-      t1.play();
-    } else {
-      t1.reverse();
-      setTimeout(() => {
-        t1.play();
-      }, 2000);
-    }
-  });
-});
+  return t1;
+};

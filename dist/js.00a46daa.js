@@ -5715,6 +5715,20 @@ window.addEventListener("DOMContentLoaded", function (event) {
   //pseudo element is going from down to up, and eventually to scale 0
 
 
+  var t1 = createTimeline();
+  document.getElementById("cta").addEventListener("click", function () {
+    if (t1.reversed()) {
+      t1.play();
+    } else {
+      t1.reverse();
+      setTimeout(function () {
+        t1.play();
+      }, 2000);
+    }
+  });
+});
+
+var createTimeline = function createTimeline() {
   var rule = CSSRulePlugin.getRule("span:after");
 
   var t1 = _gsap.default.timeline({
@@ -5742,17 +5756,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
     //go up
     opacity: 0
   }, "-=.5");
-  document.getElementById("cta").addEventListener("click", function () {
-    if (t1.reversed()) {
-      t1.play();
-    } else {
-      t1.reverse();
-      setTimeout(function () {
-        t1.play();
-      }, 2000);
-    }
-  });
-});
+  return t1;
+};
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
