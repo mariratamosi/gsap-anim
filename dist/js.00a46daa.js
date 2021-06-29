@@ -5690,11 +5690,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
 
-  _gsap.default.from(".content", {
+  _gsap.default.from(".anim1", {
     opacity: 0,
     duration: 1,
     y: -50,
-    ease: "Power2.easeInOut"
+    //go down
+    ease: "Power2.easeInOut",
+    stagger: 0.6
+  });
+
+  _gsap.default.from("img", {
+    duration: 1,
+    y: 30,
+    //go up
+    opacity: 0,
+    delay: 1.4
+  });
+
+  _gsap.default.from("aside", {
+    duration: 1,
+    opacity: 0,
+    backgroundPosition: "200px 0px",
+    delay: 1.1
   });
 });
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
