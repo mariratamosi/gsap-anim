@@ -5685,6 +5685,8 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = _interopRequireDefault(require("gsap"));
 
+var _gsapCore = require("gsap/gsap-core");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var t1 = null;
@@ -5705,8 +5707,19 @@ window.addEventListener("DOMContentLoaded", function (event) {
   //         t1.play();
   //       }, 2000);
   //     }
-  //   });
+  //   });\
+
+  window.addEventListener("mousemove", function (e) {
+    moveCircle(".cursor-circle", e);
+  });
 });
+
+var moveCircle = function moveCircle(selector, evt) {
+  _gsap.default.to(selector, {
+    left: evt.pageX,
+    top: evt.pageY
+  });
+};
 
 var createTimeline = function createTimeline() {
   var rule = CSSRulePlugin.getRule("span:after");
@@ -5761,7 +5774,7 @@ var createTimeline = function createTimeline() {
 
   return t1;
 };
-},{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"gsap":"../node_modules/gsap/index.js","gsap/gsap-core":"../node_modules/gsap/gsap-core.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -5789,7 +5802,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6739" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9070" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

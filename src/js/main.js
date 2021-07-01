@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { selector } from "gsap/gsap-core";
 
 let t1 = null;
 
@@ -21,8 +22,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //         t1.play();
   //       }, 2000);
   //     }
-  //   });
+  //   });\
+
+  window.addEventListener("mousemove", (e) => {
+    moveCircle(".cursor-circle", e);
+  });
 });
+
+const moveCircle = (selector, evt) => {
+  gsap.to(selector, {
+    left: evt.pageX,
+    top: evt.pageY,
+  });
+};
 
 const createTimeline = function () {
   let rule = CSSRulePlugin.getRule("span:after");

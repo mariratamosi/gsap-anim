@@ -33,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .bg-full {
@@ -76,4 +76,12 @@ body {
     top: 50%;
     opacity: 0;
   }
+}
+
+.cursor-circle {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
 }
