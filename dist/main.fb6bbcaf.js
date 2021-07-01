@@ -5680,7 +5680,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
-},{"./gsap-core.js":"../node_modules/gsap/gsap-core.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js"}],"js/index.js":[function(require,module,exports) {
+},{"./gsap-core.js":"../node_modules/gsap/gsap-core.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js"}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _gsap = _interopRequireDefault(require("gsap"));
@@ -5690,42 +5690,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
 
-  _gsap.default.registerPlugin(CSSRulePlugin); //gsap.registerPlugin(CSSPlugin, CSSRulePlugin);
-  //   gsap.from(".anim1", {
-  //     opacity: 0,
-  //     duration: 1,
-  //     y: -50, //go down
-  //     ease: "Power2.easeInOut",
-  //     stagger: 0.6,
-  //   });
-  //   gsap.from("img", {
-  //     duration: 1,
-  //     y: 30, //go up
-  //     opacity: 0,
-  //     delay: 1.4,
-  //   });
-  //   gsap.from("aside", {
-  //     duration: 1,
-  //     opacity: 0,
-  //     backgroundPosition: "200px 0px",
-  //     delay: 1.1,
-  //   });
-  //   let rule = CSSRulePlugin.getRule("span:after");
-  //   gsap.to(rule, { duration: 5, cssRule: { scaleY: 0 } });
-  //pseudo element is going from down to up, and eventually to scale 0
+  _gsap.default.registerPlugin(CSSRulePlugin);
 
-
-  var t1 = createTimeline();
-  document.getElementById("cta").addEventListener("click", function () {
-    if (t1.reversed()) {
-      t1.play();
-    } else {
-      t1.reverse();
-      setTimeout(function () {
-        t1.play();
-      }, 2000);
-    }
-  });
+  var t1 = createTimeline(); //   document.getElementById("cta").addEventListener("click", () => {
+  //     if (t1.reversed()) {
+  //       t1.play();
+  //     } else {
+  //       t1.reverse();
+  //       setTimeout(() => {
+  //         t1.play();
+  //       }, 2000);
+  //     }
+  //   });
 });
 
 var createTimeline = function createTimeline() {
@@ -5733,29 +5709,38 @@ var createTimeline = function createTimeline() {
 
   var t1 = _gsap.default.timeline({
     defaults: {
-      duration: 1
+      duration: 5
     }
   }); //ekta shesh hoile arekta hobe, so aage vaage korte chaile add "-=2.2"
 
 
-  t1.from(".anim1", {
-    y: -50,
-    stagger: 0.6,
-    opacity: 0
-  }).to(rule, {
-    duration: 1.8,
-    cssRule: {
-      scaleY: 0
-    }
-  }, "-=2.2" //early
-  ).from("aside", {
+  t1.from(".bg-full", {
     opacity: 0,
-    backgroundPosition: "200px 0px"
-  }, "-=1.5").from("img", {
-    y: 30,
-    //go up
-    opacity: 0
-  }, "-=.5");
+    duration: 10 // scale: 1.5,
+    // x: 200,
+    // y: 200,
+
+  }) // .from(
+  //   ".bg-full img",
+  //   {
+  //     opacity: 0,
+  //     duration: 10,
+  //     scale: 0.5,
+  //   },
+  //   "-=10"
+  // )
+  .to(".bg-full", {
+    opacity: 0,
+    duration: 7
+  }).from(".main-header", {
+    duration: 7,
+    opacity: 0,
+    ease: "elastic"
+  }, "-=8").from(".sub-header", {
+    duration: 3,
+    opacity: 0,
+    ease: "elastic"
+  });
   return t1;
 };
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -5786,7 +5771,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3025" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6739" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -5962,5 +5947,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/main.js"], null)
+//# sourceMappingURL=/main.fb6bbcaf.js.map

@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "cm-font", "Roboto", sans-serif;
+}
+
+@font-face {
+  font-family: "cm-font";
+  src: url("/assets/Rajdhani-Light.ttf");
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.line {
+  position: absolute;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bg-full {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.header {
+  cursor: pointer;
+  text-align: left;
+}
+
+.header div {
+  position: relative;
+  // opacity: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 700px;
+    background: rgb(255, 255, 255);
+    left: 50%;
+    margin-left: -350px;
+    top: 50%;
+    opacity: 0;
+  }
+}
