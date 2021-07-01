@@ -10,6 +10,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: "cm-font", "Roboto", sans-serif;
+  cursor: none;
 }
 
 @font-face {
@@ -79,9 +80,11 @@ body {
 }
 
 .cursor-circle {
-  width: 10px;
-  height: 10px;
-  background: white;
+  width: 60px;
+  height: 60px;
+  // border: 2px solid white;
   border-radius: 50%;
   position: absolute;
+  background-image: url("/assets/note-1.svg");
+  background-size: cover;
 }

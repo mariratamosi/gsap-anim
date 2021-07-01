@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"F:\\My projects\\gsap-animation\\src\\assets\\Rajdhani-Light.ttf":[["Rajdhani-Light.a9a06544.ttf","assets/Rajdhani-Light.ttf"],"assets/Rajdhani-Light.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"F:\\My projects\\gsap-animation\\src\\assets\\Rajdhani-Light.ttf":[["Rajdhani-Light.a9a06544.ttf","assets/Rajdhani-Light.ttf"],"assets/Rajdhani-Light.ttf"],"F:\\My projects\\gsap-animation\\src\\assets\\note-1.svg":[["note-1.ae735736.svg","assets/note-1.svg"],"assets/note-1.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

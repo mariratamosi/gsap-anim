@@ -5710,15 +5710,17 @@ window.addEventListener("DOMContentLoaded", function (event) {
   //   });\
 
   window.addEventListener("mousemove", function (e) {
-    moveCircle(".cursor-circle", e);
+    Curson.move(".cursor-circle", e);
   });
 });
-
-var moveCircle = function moveCircle(selector, evt) {
-  _gsap.default.to(selector, {
-    left: evt.pageX,
-    top: evt.pageY
-  });
+var Curson = {
+  move: function move(selector, evt) {
+    _gsap.default.to(selector, {
+      left: evt.pageX,
+      top: evt.pageY,
+      ease: "back.out(1.7)"
+    });
+  }
 };
 
 var createTimeline = function createTimeline() {

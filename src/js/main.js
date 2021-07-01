@@ -25,15 +25,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //   });\
 
   window.addEventListener("mousemove", (e) => {
-    moveCircle(".cursor-circle", e);
+    Curson.move(".cursor-circle", e);
   });
 });
 
-const moveCircle = (selector, evt) => {
-  gsap.to(selector, {
-    left: evt.pageX,
-    top: evt.pageY,
-  });
+const Curson = {
+  move: (selector, evt) => {
+    gsap.to(selector, {
+      left: evt.pageX,
+      top: evt.pageY,
+      ease: "back.out(1.7)",
+    });
+  },
 };
 
 const createTimeline = function () {
