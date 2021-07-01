@@ -42,8 +42,17 @@ body {
   bottom: 0;
   right: 0;
   overflow: hidden;
-  img {
+
+  .bg-img-1 {
     width: 100%;
+  }
+
+  .bg-img-2 {
+    opacity: 0;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
   }
 }
 

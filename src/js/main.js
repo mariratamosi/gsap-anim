@@ -39,7 +39,7 @@ const createTimeline = function () {
     duration: 10,
   })
     .from(
-      ".bg-full img",
+      ".bg-full .bg-img-1",
       {
         opacity: 0,
         duration: 10,
@@ -49,7 +49,7 @@ const createTimeline = function () {
       },
       "-=10"
     )
-    .to(".bg-full", {
+    .to(".bg-full .bg-img-1", {
       opacity: 0,
       duration: 7,
     })
@@ -62,11 +62,36 @@ const createTimeline = function () {
       },
       "-=8"
     )
-    .from(".sub-header", {
-      duration: 3,
-      opacity: 0,
-      ease: "elastic",
+    .from(
+      ".sub-header",
+      {
+        duration: 7,
+        opacity: 0,
+        ease: "elastic",
+      },
+      "-=5"
+    )
+    .to(".bg-full .bg-img-2", {
+      opacity: 1,
+      duration: 20,
+      display: "block",
     });
+  // .to(
+  //   ".main-header",
+  //   {
+  //     duration: 8,
+  //     color: "red",
+  //   },
+  //   "-=5"
+  // )
+  // .to(
+  //   ".sub-header",
+  //   {
+  //     duration: 8,
+  //     color: "red",
+  //   },
+  //   "-=5"
+  // );
 
   return t1;
 };

@@ -5721,13 +5721,13 @@ var createTimeline = function createTimeline() {
   t1.from(".bg-full", {
     opacity: 0,
     duration: 10
-  }).from(".bg-full img", {
+  }).from(".bg-full .bg-img-1", {
     opacity: 0,
     duration: 10,
     scale: 1.5,
     x: 100,
     y: 100
-  }, "-=10").to(".bg-full", {
+  }, "-=10").to(".bg-full .bg-img-1", {
     opacity: 0,
     duration: 7
   }).from(".main-header", {
@@ -5735,10 +5735,30 @@ var createTimeline = function createTimeline() {
     opacity: 0,
     ease: "elastic"
   }, "-=8").from(".sub-header", {
-    duration: 3,
+    duration: 7,
     opacity: 0,
     ease: "elastic"
-  });
+  }, "-=5").to(".bg-full .bg-img-2", {
+    opacity: 1,
+    duration: 20,
+    display: "block"
+  }); // .to(
+  //   ".main-header",
+  //   {
+  //     duration: 8,
+  //     color: "red",
+  //   },
+  //   "-=5"
+  // )
+  // .to(
+  //   ".sub-header",
+  //   {
+  //     duration: 8,
+  //     color: "red",
+  //   },
+  //   "-=5"
+  // );
+
   return t1;
 };
 },{"gsap":"../node_modules/gsap/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

@@ -40,8 +40,15 @@ body {
   right: 0;
   overflow: hidden;
 }
-.bg-full img {
+.bg-full .bg-img-1 {
   width: 100%;
+}
+.bg-full .bg-img-2 {
+  opacity: 0;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
 
 .header {
