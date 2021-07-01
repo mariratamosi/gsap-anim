@@ -5757,23 +5757,10 @@ var createTimeline = function createTimeline() {
     opacity: 1,
     duration: 20,
     display: "block"
-  }); // .to(
-  //   ".main-header",
-  //   {
-  //     duration: 8,
-  //     color: "red",
-  //   },
-  //   "-=5"
-  // )
-  // .to(
-  //   ".sub-header",
-  //   {
-  //     duration: 8,
-  //     color: "red",
-  //   },
-  //   "-=5"
-  // );
-
+  }).from(".cursor-circle", {
+    opacity: 0,
+    duration: 3
+  });
   return t1;
 };
 },{"gsap":"../node_modules/gsap/index.js","gsap/gsap-core":"../node_modules/gsap/gsap-core.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

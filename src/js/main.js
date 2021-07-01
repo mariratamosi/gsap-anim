@@ -90,23 +90,11 @@ const createTimeline = function () {
       opacity: 1,
       duration: 20,
       display: "block",
+    })
+    .from(".cursor-circle", {
+      opacity: 0,
+      duration: 3,
     });
-  // .to(
-  //   ".main-header",
-  //   {
-  //     duration: 8,
-  //     color: "red",
-  //   },
-  //   "-=5"
-  // )
-  // .to(
-  //   ".sub-header",
-  //   {
-  //     duration: 8,
-  //     color: "red",
-  //   },
-  //   "-=5"
-  // );
 
   return t1;
 };
