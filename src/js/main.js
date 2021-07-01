@@ -1,10 +1,16 @@
 import gsap from "gsap";
 
+let t1 = null;
+
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
   gsap.registerPlugin(CSSRulePlugin);
 
-  let t1 = createTimeline();
+  t1 = createTimeline();
+
+  // setTimeout(() => {
+  //   t1.pause();
+  // }, 4000);
 
   //   document.getElementById("cta").addEventListener("click", () => {
   //     if (t1.reversed()) {
@@ -31,19 +37,18 @@ const createTimeline = function () {
   t1.from(".bg-full", {
     opacity: 0,
     duration: 10,
-    scale: 1.5,
-    // x: 200,
-    // y: 200,
   })
-    // .from(
-    //   ".bg-full img",
-    //   {
-    //     opacity: 0,
-    //     duration: 10,
-    //     scale: 0.5,
-    //   },
-    //   "-=10"
-    // )
+    .from(
+      ".bg-full img",
+      {
+        opacity: 0,
+        duration: 10,
+        scale: 1.5,
+        x: 100,
+        y: 100,
+      },
+      "-=10"
+    )
     .to(".bg-full", {
       opacity: 0,
       duration: 7,

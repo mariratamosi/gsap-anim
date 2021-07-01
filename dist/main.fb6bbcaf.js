@@ -5687,12 +5687,16 @@ var _gsap = _interopRequireDefault(require("gsap"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var t1 = null;
 window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
 
   _gsap.default.registerPlugin(CSSRulePlugin);
 
-  var t1 = createTimeline(); //   document.getElementById("cta").addEventListener("click", () => {
+  t1 = createTimeline(); // setTimeout(() => {
+  //   t1.pause();
+  // }, 4000);
+  //   document.getElementById("cta").addEventListener("click", () => {
   //     if (t1.reversed()) {
   //       t1.play();
   //     } else {
@@ -5716,20 +5720,14 @@ var createTimeline = function createTimeline() {
 
   t1.from(".bg-full", {
     opacity: 0,
+    duration: 10
+  }).from(".bg-full img", {
+    opacity: 0,
     duration: 10,
-    scale: 1.5 // x: 200,
-    // y: 200,
-
-  }) // .from(
-  //   ".bg-full img",
-  //   {
-  //     opacity: 0,
-  //     duration: 10,
-  //     scale: 0.5,
-  //   },
-  //   "-=10"
-  // )
-  .to(".bg-full", {
+    scale: 1.5,
+    x: 100,
+    y: 100
+  }, "-=10").to(".bg-full", {
     opacity: 0,
     duration: 7
   }).from(".main-header", {

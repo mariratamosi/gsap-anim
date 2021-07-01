@@ -31,7 +31,6 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
 }
 
 .bg-full {
@@ -39,6 +38,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+  overflow: hidden;
 }
 .bg-full img {
   width: 100%;
