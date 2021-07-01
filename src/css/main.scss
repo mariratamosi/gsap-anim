@@ -23,10 +23,6 @@ body {
   box-sizing: border-box;
 }
 
-.line {
-  position: absolute;
-}
-
 .container {
   height: 100%;
   width: 100%;
@@ -37,17 +33,17 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .bg-full {
   width: 100%;
   position: absolute;
   bottom: 0;
-  overflow: hidden;
+  right: 0;
 
   img {
     width: 100%;
-    overflow: hidden;
   }
 }
 

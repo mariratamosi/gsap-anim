@@ -31,7 +31,7 @@ const createTimeline = function () {
   t1.from(".bg-full", {
     opacity: 0,
     duration: 10,
-    // scale: 1.5,
+    scale: 1.5,
     // x: 200,
     // y: 200,
   })
